@@ -1,3 +1,11 @@
+/* General Reset for Consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Overall container styling */
 .uploader-container {
   max-width: 600px;
   margin: 40px auto;
@@ -8,25 +16,48 @@
   text-align: center;
 }
 
+/* Header styling */
 h2 {
   font-size: 2rem;
   color: #333;
   margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
 }
 
+/* Button to switch between image and video */
+.toggle-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.toggle-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+/* Form layout */
 .uploader-form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* File input styling */
 .file-input {
-  padding: 10px;
+  padding: 12px 15px;
   font-size: 1rem;
   border-radius: 4px;
   border: 2px solid #ccc;
   margin-bottom: 20px;
   transition: border-color 0.3s ease;
+  width: 80%;
 }
 
 .file-input:hover,
@@ -35,27 +66,33 @@ h2 {
   outline: none;
 }
 
-.image-preview {
+/* Image preview container */
+.image-preview,
+.video-preview {
   margin-bottom: 20px;
   border: 2px dashed #ddd;
-  padding: 20px;
+  padding: 15px;
   border-radius: 8px;
   width: 100%;
   max-width: 300px;
-  margin: 0 auto;
+  margin: 20px auto;
+  background-color: #fff;
 }
 
-.preview-image {
+.preview-image,
+.preview-video {
   width: 100%;
   height: auto;
   border-radius: 8px;
   transition: transform 0.3s ease;
 }
 
-.preview-image:hover {
+.preview-image:hover,
+.preview-video:hover {
   transform: scale(1.05);
 }
 
+/* Upload button */
 .upload-button {
   padding: 12px 24px;
   font-size: 1rem;
@@ -75,4 +112,44 @@ h2 {
 .upload-button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
+}
+
+/* Reply image/video styling */
+.reply_image_main_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.reply_image_container {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.reply_image_content {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.reply_image_close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.reply_image_close:hover {
+  color: #ff4d4d;
 }
